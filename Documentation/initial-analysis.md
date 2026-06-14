@@ -35,3 +35,9 @@ There aren't that many because I think this project is fairly simple and straigh
 This program is, as stated a plethora of times before this point, fairly simple, so the program doesn't have many requirements. The user will need the following:
 * Up-to-date web browser - to run the website frontend
 * Stable internet connection - to enable the Python backend to retrieve market data without connection errors
+
+## Preliminary research to inform success criteria
+I will now look at some designs in brief to help plan out my success criteria. Despite this section technically belonging to the design workflow, I will carry this out in the analysis stage as I don't want to walk into a project with my success criteria underdeveloped.
+
+### Yahoo Finance
+[insert file here]
