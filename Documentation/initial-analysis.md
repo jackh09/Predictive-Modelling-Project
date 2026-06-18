@@ -76,3 +76,37 @@ jsonData = df.to_json(orient="records", date_format="iso") # convert data to jso
 ```
 
 I will leave research here, as I now have enough information to inform my success criteria.
+
+## Success Criteria
+I will now define my success criteria, which will ensure that I stay on track and to the point, so that I avoid adding features that I don't need to.
+
+### Frontend
+[HTML, CSS, Javascript]
+#### Landing Page
+1. Website title at top
+2. Short description explaining program and use cases
+3. Search bar to find different stocks
+4. Search bar input validation
+#### Stock Viewer Page
+1. Large price history graph using charts.js
+2. Price axis anchored to the right
+3. Large title of the stock name
+4. Time selection buttons
+5. Precise, numerically customizable time selection menu
+6. Real time graph (updates once per minute)
+7. Additional information about the stock:
+8. Opening price
+9. Previous closing price
+10. Daily high/low
+11. Volume
+12. Market cap
+13. Daily return calculated using pandas
+### Backend
+[Python]
+1. yfinance module fetches ticker data (more info above)
+2. Fetch this data when search bar is used
+3. pandas generates daily return
+4. pack into json file to send to frontend
+
+## Final Note
+With that, initial analysis is done. I will now move onto the design section, which can be found in the same folder as this.
