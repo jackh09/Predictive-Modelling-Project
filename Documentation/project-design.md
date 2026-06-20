@@ -155,7 +155,7 @@ Now I will implement a simple search bar to allow the user to search for and loo
 <body>
     <label for="Search">Search for a stock:</label><br>
     <input type="text" id="Search" name="Search" placeholder="TSLA">
-    <input type="searchButton" value="Search">    
+    <input type="submit" value="Search">    
 </body>
 ```
 
@@ -172,7 +172,7 @@ put each new attribute on a new line as this one line has quite a few:
         required
         minlength="1"
         maxlength="10"
-        pattern="[A-Za-z0-9\.\-=]+" <!-- Allows only letters, numbers, periods (.), hyphens (-) and equals (=) and the + means one or more of these -->
+        pattern="[A-Za-z0-9\.\-=]+"
         title="Please enter a valid ticker symbol (e.g., TSLA, BTC-USD, VOD.L)"> <!-- Appears if user types an erroneous character -->
 </body>
 ```
