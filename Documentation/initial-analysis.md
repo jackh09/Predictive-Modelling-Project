@@ -1,8 +1,8 @@
 # Initial analysis
 
 ## Project Introduction
-This repository intends to document and present my financial dashboard project, coded using a mixture of different programming languages.
-The project itself will be fairly basic: just allowing the user to check the financial history of different stocks, as well as providing some simple search features such as changing the time period, stock, data types, etc.
+This repository intends to document and present my predictive modelling project, coded using a mixture of C++ and Python.
+Python will be used to fetch financial data and pack it into a JSON file that feeds the C++ predictive analysis engine.
 For this project, I will vaguely follow the OCR A-level project mark scheme and project guidance as the iterative approach is what I am used to using and works well for most projects.
 I will use a very compressed approach though for my documentation, as I want to showcase my programming skills, not my essay-writing skills. To add to this, I will omit some sections that would have originally been compulsory in the project, for example an extensive breakdown of existing designs and stakeholder analysis, due to this project being unlikely to be used by consumers and also to get the project done in good time.
 This project is one of 3 passion projects intended to develop my full stack skills via programming languages such as HTML, CSS, Javascript, Python and C++.
@@ -12,17 +12,16 @@ As taught in my A-level Computer Science course, I will identify some essential 
 This will help me visualise the program as a whole in my head, and this clearer picture will aid in developing each module of the program as I will be able to consider preconditions, inputs and outputs beforehand.
 This section will be split into 2 sections: one for the frontend and one for the backend.
 
-### Frontend
-* Landing page - tell the user about the project and how to use it
-* Tool page - the webpage of which the financial dashboard will actually be hosted
-* Various viewing methods - the ability to view the stock's histories in graphs or tables, as well as being able to see the stock's complicated data individually in a list
-* Filtering by custom parameters - leading on from the previous point, the user should be able to filter by just one item, for example a stock's total loss/gain per day
-
-### Backend
-* Fetch live, accurate financial data
-* Pack stock data into a json file for the website
+### Fetching Financial Data
+* Fetch current and accurate financial data
+* Pack stock data into a JSON file to serve the C++ modelling engine
 * Efficient algorithms - attempt to reduce time and space complexity as much as possible
-* Connect seamlessly with the website
+
+### Predictive Analysis Engine
+* Monte Carlo simulations utilising Geometric Brownian Motion
+* See financial modelling research markdown file for more information
+
+* ---------- go from here
 
 ## Limitations
 I will now identify some limitations I may have/face. This is done in order to draw boundaries and prevent project-ending scope creep.
