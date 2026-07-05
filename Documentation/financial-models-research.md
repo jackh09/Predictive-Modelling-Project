@@ -13,7 +13,7 @@ All of these have complex mathematics and definitions and their own pros and con
 
 ### Monte Carlo Simulations
 #### Definition:
-From [Wikipedia: Monte Carlo Method][https://en.wikipedia.org/wiki/Monte_Carlo_method], a monte carlo simulation is "a broad class of computational algorithms based on repeated random sampling for obtaining numerical results, conceptualized by Polish mathematician Stanisław Ulam. The underlying concept is to use randomness to solve deterministic problems"
+From [Wikipedia (Monte Carlo Method)](https://en.wikipedia.org/wiki/Monte_Carlo_method): a monte carlo simulation is "a broad class of computational algorithms based on repeated random sampling for obtaining numerical results, conceptualized by Polish mathematician Stanisław Ulam. The underlying concept is to use randomness to solve deterministic problems"
 
 ## Summary
 
