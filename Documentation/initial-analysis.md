@@ -19,7 +19,7 @@ This section will be split into 2 sections: one for the frontend and one for the
 
 ### Predictive Analysis Engine
 * Monte Carlo simulations utilising Geometric Brownian Motion
-* See financial modelling research markdown file for more information
+* See ![financial-models-research.md](financial-models-research.md) for more information
 
 * ---------- go from here
 
