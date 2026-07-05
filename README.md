@@ -1,9 +1,3 @@
-# Financial Dashboard Project
+# Predictive Modelling Project
 
-This is one of 3 passion projects designed to develop my programming skills in various ways/areas.
-
-## Accessing the program
-
-- [] Create the website
-- [] Upload it to GitHub Pages
-- [] Fill this section out
+This project is all about deepening my understanding of C++, Python, mathematical finance models and software development as a whole.
