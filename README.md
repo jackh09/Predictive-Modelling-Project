@@ -1,3 +1,3 @@
-# Predictive Modelling Project
+# Financial Dashboard Project
 
-This project is all about deepening my understanding of C++, Python, mathematical finance models and software development as a whole.
+This project is all about deepening my understanding of full stack development and finance.
