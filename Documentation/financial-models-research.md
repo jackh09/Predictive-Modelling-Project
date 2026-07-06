@@ -12,7 +12,7 @@ All of these have complex mathematics and definitions and their own pros and con
 
 ### Monte Carlo Simulations
 #### Definition:
-From [Wikipedia (Monte Carlo Method)](https://en.wikipedia.org/wiki/Monte_Carlo_method): a monte carlo simulation is "a broad class of computational algorithms based on repeated random sampling for obtaining numerical results, conceptualized by Polish mathematician Stanisław Ulam. The underlying concept is to use randomness to solve deterministic problems." Put simply, a Monte Carlo simmulation runs multiple random predictions to obtain concrete results.
+From [Wikipedia (Monte Carlo Method)](https://en.wikipedia.org/wiki/Monte_Carlo_method): a monte carlo simulation is "a broad class of computational algorithms based on repeated random sampling for obtaining numerical results, conceptualized by Polish mathematician Stanisław Ulam. The underlying concept is to use randomness to solve deterministic problems." Put simply, a Monte Carlo simulation runs multiple random predictions to obtain concrete results. A popular model variant is Geometric Brownian Motion, where the model uses historic volatility and drift to create a random probability distribution.
 
 #### Benefits:
 * Quantifies risk as it provides a complete probability distribution
@@ -24,7 +24,7 @@ From [Wikipedia (Monte Carlo Method)](https://en.wikipedia.org/wiki/Monte_Carlo_
 
 ### Linear Regression
 #### Definition:
-From [Wikipedia (Linear regression)](https://en.wikipedia.org/wiki/Linear_regression): linear regression is "a model that estimates the relationship between a scalar response (dependent variable) and one or more explanatory variables (regressor or independent variable). A model with exactly one explanatory variable is a simple linear regression; a model with two or more explanatory variables is a multiple linear regression." Put simply, a linear regression model will come up with a line/curve of best fit by optimising parameters around the dataset to reduce the error between the actual data and the model.
+From [Wikipedia (Linear regression)](https://en.wikipedia.org/wiki/Linear_regression): linear regression is "a model that estimates the relationship between a scalar response (dependent variable) and one or more explanatory variables (regressor or independent variable). A model with exactly one explanatory variable is a simple linear regression; a model with two or more explanatory variables is a multiple linear regression." Put simply, a linear regression model will come up with a line/curve of best fit by optimising parameters around the dataset to reduce the error between the actual data and the model. A popular variant of this model is the least squares method, where an equation $y = mx + c$ is changed until the area of the squares formed between a datapoint and the line are at a minimum.
 
 #### Benefits:
 * Easier to implement than some of the other models
@@ -45,7 +45,7 @@ From [Wikipedia (Autoregressive Model)](https://en.wikipedia.org/wiki/Autoregres
 
 #### Drawbacks:
 * Model relies on accurate inputs to produce an accurate output
-* Model must be trained first before looking at data which can take a while due to computational intensity
+* Model must first solve a system of linear equations to obtain coefficients before looking at data which can take a while due to computational intensity
 
 ## Summary
 All 3 models have their own strengths and weaknesses.
@@ -54,8 +54,10 @@ All 3 models have their own strengths and weaknesses.
 * Autoregressive models are the most accurate but rely on training a model beforehand
 
 ## Final Verdict
-I was originally going to go with a Monte Carlo simulation because of it's relative simplicity, however autoregressive models are not only more accurate in their predictions but developing an autoregressive model is useful as the knowledge can be applied to other regions such as machine learning and artificial intelligence
+I was originally going to go with a Monte Carlo simulation because of its relative simplicity, however autoregressive models are not only more accurate in their predictions but developing an autoregressive model is useful as the knowledge can be applied to other regions such as machine learning and artificial intelligence
 
+## Developing an understanding of autoregressive models
+For this next section I will dive deeper into the mathematics and theory jqefboeughweofhweoufhweoufeofhefiuehfiu
 ### Reducing the drawbacks of an autoregressive model
 * Model's reliance on accurate inputs: fetch up to date financial data
 * Computational intensity: program model in C++ to speed up training
