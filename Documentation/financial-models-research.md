@@ -65,5 +65,24 @@ For this next section I will dive deeper into the mathematics and theory jqefboe
 ### Math behind AR models
 From my video research and with the assistance of AI research, I have developed a good understanding of autoregressive models.
 
-Autoregresive models use previous values to predict the values immediately after. An AR model has an order, it is notated as $AR(p)$, where $p$ represents how many previous datapoints are used to predict the next value. One problem with this current configuration is that all datapoints are equally important, which is not good practice: older values should have less of an effect than new values. To combat this, we use weights ($\Phi$). These weights "dampen out" older values so that the model is more accurate to newer data. For an approximate model, we can guesstimate these value of $\Phi$, for example an $AR(3)$ model could have weights of:
-$\Phi_1 = 0.6$, $\Phi_2 = 0.3$, $\Phi_3 = 0.1$. This is alright, but using math and matrices can give us the most mathematically accurate coefficients possible.
+Autoregresive models use previous values to predict the values immediately after. An AR model has an order, it is notated as $AR(p)$, where $p$ represents how many previous datapoints are used to predict the next value. One problem with this current configuration is that all datapoints are equally important, which is not good practice: older values should have less of an effect than new values.
+To combat this, we use weights ($\Phi$). These weights "dampen out" older values so that the model is more accurate to newer data.
+For an approximate model, we can guesstimate these value of $\Phi$, for example an $AR(3)$ model could have weights of: $\Phi_1 = 0.6$, $\Phi_2 = 0.3$, $\Phi_3 = 0.1$.
+This is satisfactory, but using math and matrices can give us the most mathematically accurate coefficients possible.
+The math in question is matrices, and in particular matrix multiplication. Let's use an example to show the math.
+
+Lets use a small dataset of 5 returns: ${1, 2, 1, 3, 2}$ and an AR(2) model.
+* Note the use of **returns**. An autoregressive model relies on **stationary** data, so using returns ensures this.
+* Stationary data is data that has 3 attributes: constant mean, $\mu$, constant variance, $\sigma^2$ and constant covariance.
+
+Now we will build 2 matrices, $X$ and $y$.
+Matrix $X$ can be called the predictors, as it is the matrix that holds the data used to predict the next day.
+Matrix $y$ can be called the target, as it is the value immediately subsequent from the corresponding row on $X$.
+Visually, it will look like this:
+$$
+X = \begin{bmatrix}
+1 & 2 \\
+2 & 1 \\
+1 & 3
+\end{bmatrix}
+$$
