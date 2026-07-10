@@ -1,0 +1,165 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="RqhMOUp5vDDBr6gbK58A">
+    <mxGraphModel dx="1571" dy="959" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VTKVMsLyEJBTbngptfEV-4" edge="1" parent="1" source="VTKVMsLyEJBTbngptfEV-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-21" edge="1" parent="1" source="VTKVMsLyEJBTbngptfEV-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-38" edge="1" parent="1" source="VTKVMsLyEJBTbngptfEV-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Predictive Modelling Project" vertex="1">
+          <mxGeometry height="60" width="120" x="630" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-10" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Fetch and format stock data" vertex="1">
+          <mxGeometry height="310" width="160" x="120" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-3" parent="VTKVMsLyEJBTbngptfEV-10" style="rounded=0;whiteSpace=wrap;html=1;" value="Fetch stock history using yfinance" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-7" parent="VTKVMsLyEJBTbngptfEV-10" style="rounded=0;whiteSpace=wrap;html=1;" value="Generate daily return using pandas" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-6" edge="1" parent="VTKVMsLyEJBTbngptfEV-10" source="VTKVMsLyEJBTbngptfEV-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-140" y="102.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-8" parent="VTKVMsLyEJBTbngptfEV-10" style="rounded=0;whiteSpace=wrap;html=1;" value="Pack into CSV" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="232.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-9" edge="1" parent="VTKVMsLyEJBTbngptfEV-10" source="VTKVMsLyEJBTbngptfEV-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-11" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="User interface" vertex="1">
+          <mxGeometry height="360" width="460" x="300" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-15" edge="1" parent="VTKVMsLyEJBTbngptfEV-11" source="VTKVMsLyEJBTbngptfEV-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-12" parent="VTKVMsLyEJBTbngptfEV-11" style="rounded=0;whiteSpace=wrap;html=1;" value="Search bar to change stocks" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-16" edge="1" parent="VTKVMsLyEJBTbngptfEV-11" source="VTKVMsLyEJBTbngptfEV-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-13" parent="VTKVMsLyEJBTbngptfEV-11" style="rounded=0;whiteSpace=wrap;html=1;" value="Input to config lag order" vertex="1">
+          <mxGeometry height="60" width="120" x="170" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-18" edge="1" parent="VTKVMsLyEJBTbngptfEV-11" source="VTKVMsLyEJBTbngptfEV-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-14" parent="VTKVMsLyEJBTbngptfEV-11" style="rounded=0;whiteSpace=wrap;html=1;" value="Button to start AR predictions" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-20" edge="1" parent="VTKVMsLyEJBTbngptfEV-11" source="VTKVMsLyEJBTbngptfEV-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-17" parent="VTKVMsLyEJBTbngptfEV-11" style="rounded=0;whiteSpace=wrap;html=1;" value="Graph to show results" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-19" parent="VTKVMsLyEJBTbngptfEV-11" style="rounded=0;whiteSpace=wrap;html=1;" value="Colour coded points to differentiate actual/predicted values" vertex="1">
+          <mxGeometry height="60" width="120" x="256" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-33" edge="1" parent="VTKVMsLyEJBTbngptfEV-11" source="VTKVMsLyEJBTbngptfEV-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-32" parent="VTKVMsLyEJBTbngptfEV-11" style="rounded=0;whiteSpace=wrap;html=1;" value="Input to change length of price history" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-22" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Predictive analysis engine" vertex="1">
+          <mxGeometry height="480" width="500" x="780" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-25" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-23" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Read CSV contents and get lag order" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-27" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-24" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Transform CSV contents into std::vector" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-29" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-26" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Transform data into autocorrelation and target matrices" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-31" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-43">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="430" />
+              <mxPoint x="190" y="190" />
+            </Array>
+            <mxPoint x="220" y="190.00000000000023" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-28" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Use AR(p) algorithm to calculate predictions" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-36" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=doubleBlock;endFill=1;strokeColor=#3333FF;" target="VTKVMsLyEJBTbngptfEV-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-34" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Error handling" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-35" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;50ms execution time" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-37" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=doubleBlock;endFill=1;strokeColor=#3333FF;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="390" as="sourcePoint" />
+            <mxPoint x="180" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-46" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-43" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Repeat until reached 5 days worth of predictions" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-47" edge="1" parent="VTKVMsLyEJBTbngptfEV-22" source="VTKVMsLyEJBTbngptfEV-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="VTKVMsLyEJBTbngptfEV-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="70" />
+              <mxPoint x="170" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-45" parent="VTKVMsLyEJBTbngptfEV-22" style="rounded=0;whiteSpace=wrap;html=1;" value="Add new value to temporary csv file (model using predictions)" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Inputs: lag order, price history (+ returns)" vertex="1">
+          <mxGeometry height="60" width="120" x="900" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Outputs: predictions (csv)" vertex="1">
+          <mxGeometry height="60" width="120" x="1040" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Inputs: stock name" vertex="1">
+          <mxGeometry height="60" width="120" x="140" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Outputs: price history (+ returns) (csv)" vertex="1">
+          <mxGeometry height="60" width="120" x="140" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Inputs: search, lag, history length" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="VTKVMsLyEJBTbngptfEV-49" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Outputs: graph, ui" vertex="1">
+          <mxGeometry height="60" width="120" x="540" y="750" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
