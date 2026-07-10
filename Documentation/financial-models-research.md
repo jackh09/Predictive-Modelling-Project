@@ -57,7 +57,7 @@ All 3 models have their own strengths and weaknesses.
 I was originally going to go with a Monte Carlo simulation because of its relative simplicity, however autoregressive models are not only more accurate in their predictions but developing an autoregressive model is useful as the knowledge can be applied to other regions such as machine learning and artificial intelligence
 
 ## Developing an understanding of autoregressive models
-For this next section I will dive deeper into the mathematics and theory jqefboeughweofhweoufhweoufeofhefiuehfiu
+For this next section I will dive deeper into the mathematics and theory
 ### Reducing the drawbacks of an autoregressive model
 * Model's reliance on accurate inputs: fetch up to date financial data
 * Computational intensity: program model in C++ to speed up training
@@ -71,7 +71,7 @@ For an approximate model, we can guesstimate these value of $\Phi$, for example 
 This is satisfactory, but using math and matrices can give us the most mathematically accurate coefficients possible.
 The math in question is matrices, and in particular matrix multiplication. Let's use an example to show the math.
 
-Lets use a small dataset of 5 returns: ${1, 2, 1, 3, 2}$ and an AR(2) model.
+Lets use a small dataset of 5 returns: $D = {1, 2, 1, 3, 2}$ and an AR(2) model.
 * Note the use of **returns**. An autoregressive model relies on **stationary** data, so using returns ensures this.
 * Stationary data is data that has 3 attributes: constant mean, $\mu$, constant variance, $\sigma^2$ and constant covariance.
 
@@ -79,10 +79,31 @@ Now we will build 2 matrices, $X$ and $y$.
 Matrix $X$ can be called the predictors, as it is the matrix that holds the data used to predict the next day.
 Matrix $y$ can be called the target, as it is the value immediately subsequent from the corresponding row on $X$.
 Visually, it will look like this:
-$$
-X = \begin{bmatrix}
-1 & 2 \\
-2 & 1 \\
-1 & 3
-\end{bmatrix}
-$$
+
+![Matrices definition](/Documentation/Assets/matrices-definition.png)
+
+* Notice the rows in X: they reflect days 1 and 2, then 2 and 3 and so on.
+* Also notice the values in Y: they reflect the value subsequent to the corresponding row in X: row 1, $X_1 = [1\ \ 2]$ (days 1 and 2) and $y_1 = 1$ (day 3)
+
+I will use a method to solve for $\Phi$ known as OLS or ordinary least squares, which means solving this equation:
+#### $$\Phi = (X^TX)^{-1}X^Ty$$
+It is simply a case of doing some simple matrix transposition and multiplication so that we get $\Phi_1 = 1.4$ and $\Phi_2 \approx 0.086$.
+* Notice that there are 2 values of $\Phi$, this is due to the chosen model being an $AR(2)$ model, so it will need 2 coefficients. An $AR(p)$ model will produce $p$ coefficients.
+
+Finally, we can plug these coefficients into the model. Remember, an $AR(2)$ model will use the previous 2 values to predict the next, so we will do:
+#### $$\Phi_1D_{today} + \Phi_2D_{yesterday} = (1.4 \times 2) + (0.086 \times 3) = 3.058$$
+
+Now we have our prediction of 3.058. There are just a few of key points left to describe.
+
+### Creating stationary data
+The data that the model will be given will be stock prices, which are not stationary. To fix this, I will use the following formula:
+
+$$ Return_t = \frac{X_t-X_{t-1}}{X_{t-1}} $$
+
+I simply need to iterate through my data and generate a new, stationary list to input into my AR model.
+
+### Long range predictions
+Autoregressive models are good for very short term predictions, such as a few days in the future, but over a long period of time, the model begins relying on its own outputs, which is always a bad idea. Furthermore, stocks are shares of companies, and companies are dynamic. Leadership changes, interest rates shift, new initiatives are released and overall, things just change. Therefore my AR model is only really suitable for 1 week, maybe 2 week predictions.
+
+### Large matrices
+The autoregressive model shown in the example was only an $AR(2)$ model, so the math was pretty compact. However, I am going to opt in to a larger order AR model such as $AR(7)$ which requires inverting $7\times7$ matrices. This can be computationally intense, but is precisely the reason I chose to code this part of the project in C++. C++ is one of the fastest programming languages out there and will have no problem calculating these complex operations.
