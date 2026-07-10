@@ -62,3 +62,8 @@ For this next section I will dive deeper into the mathematics and theory jqefboe
 * Model's reliance on accurate inputs: fetch up to date financial data
 * Computational intensity: program model in C++ to speed up training
 
+### Math behind AR models
+From my video research and with the assistance of AI research, I have developed a good understanding of autoregressive models.
+
+Autoregresive models use previous values to predict the values immediately after. An AR model has an order, it is notated as $AR(p)$, where $p$ represents how many previous datapoints are used to predict the next value. One problem with this current configuration is that all datapoints are equally important, which is not good practice: older values should have less of an effect than new values. To combat this, we use weights ($\Phi$). These weights "dampen out" older values so that the model is more accurate to newer data. For an approximate model, we can guesstimate these value of $\Phi$, for example an $AR(3)$ model could have weights of:
+$\Phi_1 = 0.6$, $\Phi_2 = 0.3$, $\Phi_3 = 0.1$. This is alright, but using math and matrices can give us the most mathematically accurate coefficients possible.
