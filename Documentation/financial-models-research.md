@@ -105,5 +105,5 @@ I simply need to iterate through my data and generate a new, stationary list to 
 ### Long range predictions
 Autoregressive models are good for very short term predictions, such as a few days in the future, but over a long period of time, the model begins relying on its own outputs, which is always a bad idea. Furthermore, stocks are shares of companies, and companies are dynamic. Leadership changes, interest rates shift, new initiatives are released and overall, things just change. Therefore my AR model is only really suitable for 1 week, maybe 2 week predictions.
 
-### Large matrices
+### High order autoregression
 The autoregressive model shown in the example was only an $AR(2)$ model, so the math was pretty compact. However, I am going to opt in to a larger order AR model such as $AR(7)$ which requires inverting $7\times7$ matrices. This can be computationally intense, but is precisely the reason I chose to code this part of the project in C++. C++ is one of the fastest programming languages out there and will have no problem calculating these complex operations.
