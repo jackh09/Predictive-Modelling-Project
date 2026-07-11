@@ -56,5 +56,5 @@ def fetchStockData(stock: str, historyLength: int) -> None:
 
     newdf.to_csv(csvDir, index=False) # create csv file with newdf data
 
-
-fetchStockData(stockName, 5)
+if __name__ == "__main__":
+    fetchStockData(stockName, 30)

@@ -11,11 +11,11 @@ This document will help me track my features and changes I have made to the sour
   - [x] Format dataframe to csv
 
 - [ ] Part 2: Predictive Analysis Engine
-  - [ ] Implement CSV parsing loop
-  - [ ] Get lag order
-  - [ ] Build up autocorrelation and target matrices from lag order
-  - [ ] Implement matrix multiplication and transposition functions
-  - [ ] Implement OLS solver to get coefficients     
+  - [x] Implement CSV parsing loop
+  - [x] Get lag order
+  - [x] Build up autocorrelation and target matrices from lag order
+  - [x] Implement matrix multiplication and transposition functions
+  - [x] Implement OLS solver to get coefficients     
 
 - [ ] Part 3: Final Touches and UI
   - [ ] Build user input side of UI
@@ -30,3 +30,5 @@ This will allow me to store quick notes on design choices, errors, bugs and twea
 ### Date: 11/07/2026 - Project Start
 * Focus - finish most of part 1 and maybe start a bit of part 2
 * Notes - changed validation for pct change calculations: instead of attempting to fix the div by zero error, I allow pandas to handle it and delete the row with a "NaN" value. created all of part one, including validation.
+* I also need to make sure that when I supply the C++ engine with parameters, I give it (lagOrder, dataCSVPath)
+* I finished the whole of part 2. Part 3 will be tomorrow where I will hopefully finish everything
