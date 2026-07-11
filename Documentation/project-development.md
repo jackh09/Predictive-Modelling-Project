@@ -4,11 +4,11 @@
 This document will help me track my features and changes I have made to the source code throughout the development cycle.
 
 ## Feature Checklist
-- [ ] Part 1: Fetch and Format stock Data
-  - [ ] Fetch stock data using yfinance
-  - [ ] Format using pandas
-  - [ ] Calculate daily return using pandas
-  - [ ] Format dataframe to csv
+- [x] Part 1: Fetch and Format stock Data
+  - [x] Fetch stock data using yfinance
+  - [x] Format using pandas
+  - [x] Calculate daily return using pandas
+  - [x] Format dataframe to csv
 
 - [ ] Part 2: Predictive Analysis Engine
   - [ ] Implement CSV parsing loop
@@ -29,4 +29,4 @@ This will allow me to store quick notes on design choices, errors, bugs and twea
 
 ### Date: 11/07/2026 - Project Start
 * Focus - finish most of part 1 and maybe start a bit of part 2
-* Notes - 
+* Notes - changed validation for pct change calculations: instead of attempting to fix the div by zero error, I allow pandas to handle it and delete the row with a "NaN" value. created all of part one, including validation.
