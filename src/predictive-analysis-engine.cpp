@@ -183,21 +183,9 @@ std::vector<std::vector<double>> multiplyMatrices(const std::vector<std::vector<
     return result;
 }
 
-int main(int argcount, char *argvals[])
+// Calculate coefficients using an Autoregressive model
+std::vector<std::vector<double>> runARSimulation(int lagOrder, std::vector<double> returns)
 {
-    // Get lag order
-    if (argcount < 3)
-    {
-        std::cerr << "Missing arguments";
-        return 1;
-    }
-
-    int lagOrder = std::stoi(argvals[1]);
-    std::string dataCSVPath = argvals[2];
-
-    // Create returns vector from CSV
-    std::vector<double> returns = readCSVReturns(dataCSVPath);
-
     // Output returns for debugging
     std::cout << "Returns from CSV:" << std::endl;
     for (size_t i = 0; i < std::min(returns.size(), static_cast<size_t>(3)); ++i)
@@ -249,7 +237,80 @@ int main(int argcount, char *argvals[])
     std::cout << "Prediction Weights (Phi):" << std::endl;
     for (size_t i = 0; i < equationResult.size(); ++i)
     {
-        std::cout << "Phi " << (i + 1) << ": " << std::fixed << std::setprecision(8) << equationResult[i][0] << std::endl;
+        std::cout << "Phi " << (i + 1) << ": " << equationResult[i][0] << std::endl;
+    }
+
+    return equationResult;
+}
+
+// Predict the next values using the coefficients determined by OLS sim
+double predictNextReturn(int lagOrder, std::vector<double> &weights, std::vector<double> previousValues)
+{
+    double predictedValue = 0;
+    for (size_t i = 0; i < lagOrder; ++i)
+    {
+        predictedValue += weights[i] * previousValues[i];
+    }
+    return predictedValue;
+}
+
+int main(int argcount, char *argvals[])
+{
+    // Get lag order
+    if (argcount < 4)
+    {
+        std::cerr << "Missing arguements" << std::endl;
+        return 1;
+    }
+    int lagOrder = std::stoi(argvals[1]);
+    double lastActualPrice = std::stod(argvals[3]);
+
+    // Read CSV data
+    std::string dataCSVPath = argvals[2];
+    std::vector<double> tempDataCSV = readCSVReturns(dataCSVPath);
+
+    // Create a vector to store actual prices
+    std::vector<double> prices;
+
+    // Calculate weights using AR model
+    std::vector<std::vector<double>> weights2D = runARSimulation(lagOrder, tempDataCSV);
+
+    // Convert weights back into 1D form
+    std::vector<double> weights;
+    for (size_t k = 0; k < weights2D.size(); ++k)
+    {
+        weights.push_back(weights2D[k][0]);
+    }
+
+    std::cout << "Weights converted successfully" << std::endl;
+
+    // Loop through and predict next values
+    for (size_t i = 0; i < 5; ++i)
+    {
+        // Get last p elements in the vector
+        std::vector<double> lastElements;
+        for (size_t j = tempDataCSV.size() - lagOrder; j < tempDataCSV.size(); ++j)
+        {
+            lastElements.push_back(tempDataCSV[j]);
+        }
+
+        // Calculate the next return using weights and previous values
+        double nextReturn = predictNextReturn(lagOrder, weights, lastElements);
+
+        // Add prediction to the vector
+        tempDataCSV.push_back(nextReturn);
+
+        // Convert return -> actual price
+        double actualPrice = lastActualPrice * (1 + nextReturn);
+
+        // Add new price to list
+        prices.push_back(actualPrice);
+
+        // Update last actual price to the new one
+        lastActualPrice = actualPrice;
+
+        // Output next return for debugging
+        std::cout << actualPrice << std::endl;
     }
 
     return 0;

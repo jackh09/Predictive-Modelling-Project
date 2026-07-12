@@ -20,7 +20,7 @@ This document will help me track my features and changes I have made to the sour
 - [ ] Part 3: Final Touches and UI
   - [ ] Build user input side of UI
   - [ ] Build graphical side of UI
-  - [ ] Implement 5 day prediction loop
+  - [x] Implement 5 day prediction loop
   - [ ] Convert predicted prices back to stock prices
   - [ ] Plot prediction on graph
      
@@ -32,3 +32,7 @@ This will allow me to store quick notes on design choices, errors, bugs and twea
 * Notes - changed validation for pct change calculations: instead of attempting to fix the div by zero error, I allow pandas to handle it and delete the row with a "NaN" value. created all of part one, including validation.
 * I also need to make sure that when I supply the C++ engine with parameters, I give it (lagOrder, dataCSVPath)
 * I finished the whole of part 2. Part 3 will be tomorrow where I will hopefully finish everything
+
+### Date: 12/07/2026 - Finishing the C++ part off
+* Focus - get the loop working to predict next 5 days
+* Notes - reworked some of the functions around but correct values are now predicted
