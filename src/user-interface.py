@@ -99,7 +99,29 @@ class LabeledPredictiveAnalysisApp:
         ## Get variables from entry boxes
         self.stockSearch = str(self.searchEntry.get())
         self.lagOrder = str(self.lagEntry.get())
-        self.priceHistory = int(self.historyEntry.get())
+        self.priceHistory = str(self.historyEntry.get())
+
+        ## Validation
+        try:
+            if int(self.lagOrder) < 1:
+                raise ValueError("Lag order must be greater than or equal to 1")
+                return 0
+        except:
+            raise TypeError("Lag order must be an integer")
+            return 0
+
+        try:
+            if int(self.priceHistory) < 2:
+                raise ValueError("Price history must be greater than or equal to 2")
+                return 0
+        except:
+            raise TypeError("Price history must be an integer")
+            return 0
+
+        if int(self.priceHistory) <= 2*int(self.lagOrder):
+            raise Exception("Price history must be more than 2x larger than lag order")
+            return 0
+        
 
         ## Fetch the stock and pack into CSV
         stockFetcher.fetchStockData(self.stockSearch, self.priceHistory)
