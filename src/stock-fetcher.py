@@ -5,21 +5,26 @@ a fully formatted csv file.
 """
 
 ## Libraries ##
+import logging
 import yfinance as yf       # fetching stock data
 import pandas as pd         # formatting data calculating returns
 import csv                  # turn raw data into formatted data for frontend
 import os                   # select a path to save the data
 
 ## Get stock name
-stockName = "AAPL"
+stockName = "^FTSE"
 
 ## check if stock is valid
 def checkStockValidity(stock: str) -> bool:
-    info = yf.Ticker(stock).history(period="1d", interval="1d")
-    return len(info) > 0
+    ## Set logging level to keep CLI clear
+    logging.getLogger("yfinance").setLevel(logging.CRITICAL)
+    try:
+        info = yf.download(stock, period="5d", interval="1d", group_by="ticker", progress=False)
+        return not info.empty
+    except Exception:
+        return False
 
 def fetchStockData(stock: str, historyLength: int) -> None:
-    
     ## verify valid search
     valid = checkStockValidity(stock)
     if not valid:
@@ -57,4 +62,4 @@ def fetchStockData(stock: str, historyLength: int) -> None:
     newdf.to_csv(csvDir, index=False) # create csv file with newdf data
 
 if __name__ == "__main__":
-    fetchStockData(stockName, 30)
+    fetchStockData(stockName, 500)
