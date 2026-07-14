@@ -10,19 +10,19 @@ This document will help me track my features and changes I have made to the sour
   - [x] Calculate daily return using pandas
   - [x] Format dataframe to csv
 
-- [ ] Part 2: Predictive Analysis Engine
+- [x] Part 2: Predictive Analysis Engine
   - [x] Implement CSV parsing loop
   - [x] Get lag order
   - [x] Build up autocorrelation and target matrices from lag order
   - [x] Implement matrix multiplication and transposition functions
   - [x] Implement OLS solver to get coefficients     
 
-- [ ] Part 3: Final Touches and UI
-  - [ ] Build user input side of UI
-  - [ ] Build graphical side of UI
+- [x] Part 3: Final Touches and UI
+  - [x] Build user input side of UI
+  - [x] Build graphical side of UI
   - [x] Implement 5 day prediction loop
-  - [ ] Convert predicted prices back to stock prices
-  - [ ] Plot prediction on graph
+  - [x] Convert predicted prices back to stock prices
+  - [x] Plot prediction on graph
      
 ## Developer Log
 This will allow me to store quick notes on design choices, errors, bugs and tweaks made during the coding phase.
@@ -36,3 +36,7 @@ This will allow me to store quick notes on design choices, errors, bugs and twea
 ### Date: 12/07/2026 - Finishing the C++ part off
 * Focus - get the loop working to predict next 5 days
 * Notes - reworked some of the functions around but correct values are now predicted
+
+### Date: 14/07/2026 - Push to finish project
+* Focus - finish UI and get everything integrated together
+* Notes - ui totally finished, no errors anywhere when using standard inputs. testing still to do
