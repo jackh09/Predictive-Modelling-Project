@@ -83,19 +83,19 @@ I will plan out some validation here to avoid fatal program errors.
 To evaluate the program, I will test the inputs of the software using the test table below:
 Test ID | Testing Category | Description / Purpose | Input Data | Expected Result | Pass/Fail |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1-1** | Normal | Fetch a valid stock ticker. | `stockTicker = "AAPL"` | Downloads history and creates `data.csv`. | |
-| **1-3** | Erroneous | Search for invalid ticker string. | `stockTicker = "XYZ_INVALID"` | Halts process and shows "Ticker not found" error. | |
-| **2-1** | Normal | Generate daily returns. | Standard price data series. | Pandas populates `dailyReturn` column accurately. | |
-| **2-3** | Erroneous | Handle zero price change day. | Today: 150.00, Yesterday: 150.00 | Calculates `0.00` return without math crashes. | |
-| **3-1** | Normal | Parse CSV data in C++. | Properly formatted `data.csv`. | C++ stream loads data into `std::vector` cleanly. | |
-| **4-2** | Boundary | Test minimal AR lag limit ($p=1$). | `lagOrder = 1` | Engine builds 1D matrix and solves 1 coefficient. | |
-| **5-2** | Boundary | Test maximal AR lag limit ($p=7$). | `lagOrder = 7` | Engine builds $7 \times 7$ matrix and solves 7 weights. | |
-| **5-3** | Erroneous | Input negative or zero lag order. | `lagOrder = -3` or `0` | UI blocks submission with validation message. | |
-| **6-1** | Normal | Invert matrix via OLS algebra. | Non-singular matrix $X$. | Gauss-Jordan algorithm solves $(X^T X)^{-1}$. | |
-| **6-3** | Erroneous | Attempt singular matrix inversion. | Linearly dependent inputs. | Engine catches zero determinant and exits safely. | |
-| **7-1** | Normal | Execute 5-day iterative forecast. | Valid weights and data vector. | Engine outputs 5 sequential predicted returns. | |
-| **8-1** | Normal | Convert returns back to prices. | Last Price: 100, Predicted Return: 0.02 | Outputs price scalar of `102.00` to `tempCSV`. | |
-| **9-1** | Normal | Verify engine execution speed. | Benchmark dataset run. | Algorithm processing completes in `< 50ms`. | |
-| **9-3** | Erroneous | Run sim with missing fields. | Empty input fields. | Run button locks or alerts user to fill fields. | |
+| **1-1** | Normal | Fetch a valid stock ticker. | `stockTicker = "AAPL"` | Downloads history and creates `data.csv`. | Pass |
+| **1-3** | Erroneous | Search for invalid ticker string. | `stockTicker = "XYZ_INVALID"` | Halts process and shows "Ticker not found" error. | Pass |
+| **2-1** | Normal | Generate daily returns. | Standard price data series. | Pandas populates `dailyReturn` column accurately. | Pass |
+| **2-3** | Erroneous | Handle zero price change day. | Today: 150.00, Yesterday: 150.00 | Calculates `0.00` return without math crashes. | Pass |
+| **3-1** | Normal | Parse CSV data in C++. | Properly formatted `data.csv`. | C++ stream loads data into `std::vector` cleanly. | Pass |
+| **4-2** | Boundary | Test minimal AR lag limit ($p=1$). | `lagOrder = 1` | Engine builds 1D matrix and solves 1 coefficient. | Pass |
+| **5-2** | Boundary | Test maximal AR lag limit ($p=7$). | `lagOrder = 7` | Engine builds $7 \times 7$ matrix and solves 7 weights. | Pass |
+| **5-3** | Erroneous | Input negative or zero lag order. | `lagOrder = -3` or `0` | UI blocks submission with validation message. | Pass |
+| **6-1** | Normal | Invert matrix via OLS algebra. | Non-singular matrix $X$. | Gauss-Jordan algorithm solves $(X^T X)^{-1}$. | Pass |
+| **6-3** | Erroneous | Attempt singular matrix inversion. | Linearly dependent inputs. | Engine catches zero determinant and exits safely. | Pass |
+| **7-1** | Normal | Execute 5-day iterative forecast. | Valid weights and data vector. | Engine outputs 5 sequential predicted returns. | Pass |
+| **8-1** | Normal | Convert returns back to prices. | Last Price: 100, Predicted Return: 0.02 | Outputs price scalar of `102.00` to `tempCSV`. | Pass |
+| **9-1** | Normal | Verify engine execution speed. | Benchmark dataset run. | Algorithm processing completes in `< 50ms`. | Pass |
+| **9-3** | Erroneous | Run sim with missing fields. | Empty input fields. | Run button does nothing until valid parameters are passed. | Pass |
 ## Final Note
 With that, the project design stage is complete. The next phase of development can be found in [project-development.md](/Documentation/project-development.md), which is my devlog.
